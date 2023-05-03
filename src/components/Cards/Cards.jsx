@@ -1,8 +1,10 @@
 import Card from '../Card/Card';
+import style from './Cards.module.css'
 
- const Cards = ({characters}) => {
+
+ const Cards = ({characters, onClose}) => {
    return (
-      <div>
+      <div className={style.contenedor}>
          {
             characters.map(({id, name, species, gender, image, origin, status}) =>{
                return (
@@ -15,10 +17,11 @@ import Card from '../Card/Card';
                  image={image}
                  origin={origin.name}
                  status={status}
-                 onClose={() => window.alert('Emulamos que se cierra la card')}
+                 onClose={onClose}
                  />
                )
             })
+            
          }
       </div>
    )

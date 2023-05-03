@@ -1,18 +1,25 @@
-const Card = ({id, name, status, species, gender, origin, image, onClose}) => {
-  
-   return (
-      <div>
-        <img src={image} alt="" />
-         <h2>Name: {name}</h2>
-         <h2>Status: {status}</h2>
-         <h2>Species: {species}</h2>
-         <h2>Gender: {gender}</h2>
-         <h2>Origin: {origin}</h2>
-         <button onClick={onClose}>Cerrar</button>
-        
+import style from './Card.module.css'
 
-      </div>
-   );
+
+
+const Card = ({id, name, status, species, gender, origin, image, onClose}) => {
+   const onClick = () => onClose(id)
+  return (
+     <div className='cards'>
+        <div className='face front'>
+           <img src={image} alt="" />
+        </div>
+
+        <div className='face back'>
+            <p>Name: "{name}"</p>
+            <p>Status: "{status}"</p>
+            <p>Species: "{species}"</p>
+            <p>Gender: "{gender}"</p>
+            <p>Origin: "{origin}"</p>
+            <button onClick={onClick}>Close</button>
+        </div>
+     </div>
+  );
 };
 
 export default Card
