@@ -10,13 +10,11 @@
       
    }
 
-   const onClick = () => {
-      onSearch(id)
-   }
+  
    return (
       <div className={style.contenedor}>
-         <input type='search' onChange={handleChange}/> 
-         <button onClick={onClick}>Agregar</button> 
+         <input type='search' onChange={handleChange} value={id}/> 
+         <button onClick={() => {onSearch(id)}}>Agregar</button> 
       </div>
    );
 };

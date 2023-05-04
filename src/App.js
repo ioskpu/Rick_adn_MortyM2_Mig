@@ -33,7 +33,7 @@ function App() {
       })
    }
    const onClose = (id) => {
-      setCharacters(characters.filter((e) => e.id !== Number(id)))
+      setCharacters(characters.filter((event) => event.id !== Number(id)))
    }
    return (
       <div className='App'>         

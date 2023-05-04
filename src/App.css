@@ -51,3 +51,14 @@
  .cards:hover .back{
    transform: perspective(600px) rotateY(360deg)
  }
+
+ body{
+  background-image: url('../src/components/asets/rick-y-morty-en-el-espacio_3840x2160_xtrafondos.com.jpg') ;
+  background-size: cover;
+  width: 100%;
+  
+
+ 
+background-position: center center;
+
+}
