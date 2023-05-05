@@ -1,11 +1,13 @@
 import style from './Card.module.css'
+import { Link } from 'react-router-dom';
 
 
 
 const Card = ({id, name, status, species, gender, origin, image, onClose}) => {
-   const onClick = () => onClose(id)
+   //const onClick = () => onClose(id)
   return (
      <div className='cards'>
+     <Link to={`/detail/${id}`}>
         <div className='face front'>
            <img src={image} alt="" />
         </div>
@@ -16,8 +18,9 @@ const Card = ({id, name, status, species, gender, origin, image, onClose}) => {
             <p>Species: "{species}"</p>
             <p>Gender: "{gender}"</p>
             <p>Origin: "{origin}"</p>
-            <button onClick={onClick}>Close</button>
+            <button onClick={()=> {onClose(id)}}>Close</button>
         </div>
+        </Link>
      </div>
   );
 };
