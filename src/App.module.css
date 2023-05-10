@@ -13,7 +13,8 @@
 }
 
 body{
-    
+    /* background-image: url('../src/components/asets/rick-y-morty-en-el-espacio_3840x2160_xtrafondos.com.jpg') ; */
+    background-size: cover;
     width: 100%;
     
 

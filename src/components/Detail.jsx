@@ -1,25 +1,27 @@
-import React from 'react'
 import axios from 'axios';
-import { useParams } from "react-router-dom";
-import { useState, useEffect } from "react";
+import { useState, useEffect } from 'react';
+import { useParams } from 'react-router-dom';
 import { Link } from 'react-router-dom';
-const Detail = () => {
+
+
+const Detail = ()=>{
+    const {id} = useParams();
     const [character, setCharacter] = useState({});
 
-    const { id } = useParams();
 
-    useEffect(() => {
-   axios(`https://rickandmortyapi.com/api/character/${id}`).then(({ data }) => {
-      if (data.name) {
-         setCharacter(data);
-      } else {
-         window.alert('No hay personajes con ese ID');
-      }
-   });
-   return setCharacter({});
-}, [id]);
+useEffect(()=>{
+    axios(`https://rickandmortyapi.com/api/character/${id}`).then(({ data }) => {
+        if (data.name) {
+           setCharacter(data);
+        } else {
+           window.alert('No hay personajes con ese ID');
+        }
+     });
+     return setCharacter({});
+}, [id])
 
-return(
+
+    return(
         <div>
             <img src={character.image && character.image} alt="" />
             <h1>Name: "{character.name && character.name}"</h1>
@@ -33,5 +35,6 @@ return(
             </Link>
         </div>
     )
-}
+};
+
 export default Detail;
